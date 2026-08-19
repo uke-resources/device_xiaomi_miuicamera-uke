@@ -10,6 +10,5 @@ vendor.camera.support.mivi=true
 hypercamera.disable_app_default_config=true
 
 # MiuiCamera
-ro.miui.notch=1
 ro.miui.ui.version.name=V816
 ro.miui.ui.version.code=816
