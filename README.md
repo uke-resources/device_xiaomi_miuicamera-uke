@@ -1,4 +1,4 @@
-# Xiaomi `uke` MiuiCamera Device Tree
+# Xiaomi `uke` MiuiCamera Device Tree (`uke-camera`)
 
 This repository provides the MIUI / Leica Camera (MiuiCamera) integration for Xiaomi CIVI 4 Pro / Redmi Turbo 3 (`uke`).
 
@@ -6,13 +6,13 @@ This repository provides the MIUI / Leica Camera (MiuiCamera) integration for Xi
 
 ## 1. How to Include in Local Manifests
 
-Add the following entries to your `.repo/local_manifests/uke-miuicamera.xml`:
+Add the following entries to your `.repo/local_manifests/uke-camera.xml`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-    <project path="device/xiaomi/uke-miuicamera" name="uke-resources/device_xiaomi_uke-miuicamera" remote="github" revision="lineage-23.2" />
-    <project path="vendor/xiaomi/uke-miuicamera" name="uke-resources/vendor_xiaomi_uke-miuicamera" remote="github" revision="lineage-23.2" />
+    <project path="device/xiaomi/uke-camera" name="uke-resources/device_xiaomi_uke-miuicamera" remote="github" revision="lineage-23.2" />
+    <project path="vendor/xiaomi/uke-camera" name="uke-resources/vendor_xiaomi_uke-camera" remote="github" revision="lineage-23.2" />
 </manifest>
 ```
 
@@ -21,19 +21,19 @@ Add the following entries to your `.repo/local_manifests/uke-miuicamera.xml`:
 ## 2. Integration into Device Tree
 
 ### A. Update `BoardConfig.mk`
-In `device/xiaomi/uke/BoardConfig.mk`, include the MiuiCamera BoardConfig:
+In `device/xiaomi/uke/BoardConfig.mk`, include the camera BoardConfig:
 
 ```makefile
 # MiuiCamera
-include device/xiaomi/uke-miuicamera/BoardConfig.mk
+include device/xiaomi/uke-camera/BoardConfig.mk
 ```
 
 ### B. Update `device.mk`
-In `device/xiaomi/uke/device.mk`, inherit the MiuiCamera makefile:
+In `device/xiaomi/uke/device.mk`, inherit the camera makefile:
 
 ```makefile
 # MiuiCamera
-$(call inherit-product, device/xiaomi/uke-miuicamera/device.mk)
+$(call inherit-product, device/xiaomi/uke-camera/device.mk)
 ```
 
 ---
@@ -43,11 +43,11 @@ $(call inherit-product, device/xiaomi/uke-miuicamera/device.mk)
 To extract camera blobs from a stock HyperOS dump or device:
 
 ```bash
-cd device/xiaomi/uke-miuicamera
+cd device/xiaomi/uke-camera
 ./extract-files.py /path/to/dump
 ```
 
-This will automatically extract `MiuiCamera.apk`, JNI libraries, apply required shims and apktool patches, and generate `vendor/xiaomi/uke-miuicamera`.
+This will automatically extract `MiuiCamera.apk`, JNI libraries, apply required shims and apktool patches, and generate `vendor/xiaomi/uke-camera`.
 
 ---
 
