@@ -4,9 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Inherit from the proprietary version
-include vendor/xiaomi/uke-camera/BoardConfigVendor.mk
-
 MIUICAMERA_PATH := device/xiaomi/uke-camera
 
 # Properties
