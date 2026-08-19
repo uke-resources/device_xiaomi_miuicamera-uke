@@ -1,0 +1,24 @@
+From 0d666eb2aeae2da963f7bda4cf218f51aea71871 Mon Sep 17 00:00:00 2001
+From: AdarshGrewal <adarshgrewal@gmail.com>
+Date: Wed, 3 Jun 2026 13:44:28 +0530
+Subject: [PATCH 1/2] Assume that mod_device is global
+
+---
+ smali_classes3/g6/d.smali | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/smali_classes3/g6/d.smali b/smali_classes3/g6/d.smali
+index cc09a4e1..f4b9f4b1 100644
+--- a/smali_classes3/g6/d.smali
++++ b/smali_classes3/g6/d.smali
+@@ -223,7 +223,7 @@
+ 
+     invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+ 
+-    move-result v0
++    const/4 v0, 0x1
+ 
+     sput-boolean v0, Lg6/d;->l:Z
+ 
+-- 
+2.54.0
