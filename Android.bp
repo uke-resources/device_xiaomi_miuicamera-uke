@@ -15,6 +15,7 @@ android_app_import {
     name: "MiuiCamera",
     apk: "prebuilt/priv-app/MiuiCamera/MiuiCamera.apk",
     presigned: true,
+    preprocessed: true,
     dex_preopt: {
         enabled: false,
     },
