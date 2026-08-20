@@ -5,3 +5,6 @@ ro.camera.disableHeicUltraHDR=true
 persist.sys.miui.camera.version=3.0
 ro.camerax.extensions.enabled=true
 camera.disable_zsl_mode=true
+persist.vendor.camera.privapp.list=com.android.camera,org.lineageos.aperture
+vendor.camera.aux.packagelist=com.android.camera,org.lineageos.aperture
+vendor.camera.support.mivi=true

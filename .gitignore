@@ -1,2 +1,2 @@
 # Ignore generated vendor directory
-vendor/
+/vendor/
