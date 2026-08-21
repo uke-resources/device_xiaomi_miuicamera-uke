@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-MIUICAMERA_PATH := device/xiaomi/uke-camera
+MIUICAMERA_PATH := device/xiaomi/miuicamera-uke
 
 # Properties
 TARGET_SYSTEM_PROP += $(MIUICAMERA_PATH)/system.prop

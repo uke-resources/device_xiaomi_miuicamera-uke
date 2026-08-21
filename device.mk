@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-MIUICAMERA_PATH := device/xiaomi/uke-camera
+MIUICAMERA_PATH := device/xiaomi/miuicamera-uke
 
 # Camera
 $(call soong_config_set_bool,camera,override_format_from_reserved,true)

@@ -17,7 +17,7 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    'device/xiaomi/uke-camera',
+    'device/xiaomi/miuicamera-uke',
 ]
 
 blob_fixups: blob_fixups_user_type = {
@@ -33,7 +33,7 @@ blob_fixups: blob_fixups_user_type = {
 }  # fmt: skip
 
 module = ExtractUtilsModule(
-    'uke-camera',
+    'miuicamera-uke',
     'xiaomi',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,

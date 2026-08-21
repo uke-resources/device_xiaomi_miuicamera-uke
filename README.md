@@ -11,7 +11,7 @@ In `device/xiaomi/uke/BoardConfig.mk`, include the camera BoardConfig:
 
 ```makefile
 # MiuiCamera
-include device/xiaomi/uke-camera/BoardConfig.mk
+include device/xiaomi/miuicamera-uke/BoardConfig.mk
 ```
 
 ### B. Update `device.mk`
@@ -19,5 +19,5 @@ In `device/xiaomi/uke/device.mk`, inherit the camera makefile:
 
 ```makefile
 # MiuiCamera
-$(call inherit-product, device/xiaomi/uke-camera/device.mk)
+$(call inherit-product, device/xiaomi/miuicamera-uke/device.mk)
 ```

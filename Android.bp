@@ -6,7 +6,7 @@
 
 soong_namespace {
     imports: [
-        "device/xiaomi/uke-camera",
+        "device/xiaomi/miuicamera-uke",
     ],
 }
 
