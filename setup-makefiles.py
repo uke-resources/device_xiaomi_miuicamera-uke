@@ -12,4 +12,4 @@ from extract_utils.main import (
 if __name__ == '__main__':
     from extract_files import module
     utils = ExtractUtils.device(module)
-    utils.run_regenerate_makefiles()
+    utils.run_setup_makefiles()
