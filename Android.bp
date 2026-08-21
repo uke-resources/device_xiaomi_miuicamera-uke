@@ -12,6 +12,7 @@ soong_namespace {
 
 android_app_import {
     name: "MiuiCamera",
+    owner: "xiaomi/miuicamera-uke",
     apk: "prebuilt/priv-app/MiuiCamera/MiuiCamera.apk",
     certificate: "platform",
     dex_preopt: {
@@ -27,6 +28,7 @@ android_app_import {
 
 cc_prebuilt_library_shared {
     name: "libcamera_algoup_jni.xiaomi",
+    owner: "xiaomi/miuicamera-uke",
     srcs: ["prebuilt/lib64/libcamera_algoup_jni.xiaomi.so"],
     shared_libs: [
         "libgui_shim_miuicamera",
@@ -52,6 +54,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libcamera_mianode_jni.xiaomi",
+    owner: "xiaomi/miuicamera-uke",
     srcs: ["prebuilt/lib64/libcamera_mianode_jni.xiaomi.so"],
     shared_libs: [
         "libgui_shim_miuicamera",
@@ -74,6 +77,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libmicampostproc_client",
+    owner: "xiaomi/miuicamera-uke",
     srcs: ["prebuilt/lib64/libmicampostproc_client.so"],
     shared_libs: [
         "libEGL",
@@ -99,6 +103,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "vendor.xiaomi.hardware.campostproc@1.0",
+    owner: "xiaomi/miuicamera-uke",
     srcs: ["prebuilt/lib64/vendor.xiaomi.hardware.campostproc@1.0.so"],
     shared_libs: [
         "android.hardware.camera.common@1.0",
