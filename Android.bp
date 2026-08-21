@@ -19,7 +19,6 @@ android_app_import {
         enabled: false,
     },
     privileged: true,
-    product_specific: true,
     overrides: [
         "Aperture",
         "Camera2",
@@ -48,7 +47,6 @@ cc_prebuilt_library_shared {
         "libutils",
         "libvndksupport",
     ],
-    system_ext_specific: true,
     compile_multilib: "64",
     check_elf_files: false,
 }
@@ -71,7 +69,6 @@ cc_prebuilt_library_shared {
         "libvndksupport",
         "libxml2",
     ],
-    system_ext_specific: true,
     compile_multilib: "64",
     check_elf_files: false,
 }
@@ -97,7 +94,6 @@ cc_prebuilt_library_shared {
         "libutils",
         "vendor.xiaomi.hardware.campostproc@1.0",
     ],
-    system_ext_specific: true,
     compile_multilib: "64",
     check_elf_files: false,
 }
@@ -112,7 +108,6 @@ cc_prebuilt_library_shared {
         "liblog",
         "libutils",
     ],
-    system_ext_specific: true,
     compile_multilib: "64",
     check_elf_files: false,
 }
