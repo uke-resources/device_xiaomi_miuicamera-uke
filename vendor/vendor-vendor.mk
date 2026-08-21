@@ -2,7 +2,7 @@
 #
 
 PRODUCT_SOONG_NAMESPACES += \
-    vendor/xiaomi/miuicamera-uke
+    vendor/xiaomi/miuicamera-uke/vendor
 
 PRODUCT_PACKAGES += \
     MiuiCamera \
