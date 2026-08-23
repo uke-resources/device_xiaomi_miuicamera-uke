@@ -1,1 +1,10 @@
 binder_call(hal_camera_default, platform_app)
+
+allow hal_camera_default vendor_camera_data_file:dir create_dir_perms;
+allow hal_camera_default vendor_camera_data_file:file create_file_perms;
+
+allow hal_camera_default vendor_xdsp_device:chr_file r_file_perms;
+allow hal_camera_default vendor_qdsp_device:chr_file r_file_perms;
+
+get_prop(hal_camera_default, vendor_camera_prop)
+set_prop(hal_camera_default, vendor_camera_prop)
