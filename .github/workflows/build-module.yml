@@ -1,12 +1,6 @@
 name: Build Magisk & KernelSU Module
 
 on:
-  push:
-    branches:
-      - lineage-23.2
-  pull_request:
-    branches:
-      - lineage-23.2
   workflow_dispatch:
 
 jobs:
