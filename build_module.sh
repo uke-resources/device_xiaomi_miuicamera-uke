@@ -20,14 +20,24 @@ mkdir -p "${OUT_DIR}/system/lib64"
 
 # 2. Reassemble split MiuiCamera.apk parts if needed
 APK_DIR="${SCRIPT_DIR}/vendor/proprietary/system/priv-app/MiuiCamera"
+TARGET_APK="${OUT_DIR}/system/priv-app/MiuiCamera/MiuiCamera.apk"
+
 if [ -f "${APK_DIR}/MiuiCamera.apk.00" ]; then
     echo "Reassembling MiuiCamera.apk..."
-    cat "${APK_DIR}"/MiuiCamera.apk.* > "${OUT_DIR}/system/priv-app/MiuiCamera/MiuiCamera.apk"
+    cat "${APK_DIR}"/MiuiCamera.apk.* > "${TARGET_APK}"
 elif [ -f "${APK_DIR}/MiuiCamera.apk" ]; then
-    cp "${APK_DIR}/MiuiCamera.apk" "${OUT_DIR}/system/priv-app/MiuiCamera/MiuiCamera.apk"
+    cp "${APK_DIR}/MiuiCamera.apk" "${TARGET_APK}"
 else
     echo "Error: MiuiCamera.apk not found!"
     exit 1
+fi
+
+# Sign MiuiCamera.apk with AOSP Platform certificate if apksigner is available
+KEY_PK8="${SCRIPT_DIR}/security/platform.pk8"
+KEY_CERT="${SCRIPT_DIR}/security/platform.x509.pem"
+if command -v apksigner >/dev/null 2>&1 && [ -f "${KEY_PK8}" ] && [ -f "${KEY_CERT}" ]; then
+    echo "Signing MiuiCamera.apk with AOSP Platform certificate..."
+    apksigner sign --key "${KEY_PK8}" --cert "${KEY_CERT}" "${TARGET_APK}"
 fi
 
 # 3. Copy permissions and configs

@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y gcc-aarch64-linux-gnu clang zip
+          sudo apt-get install -y gcc-aarch64-linux-gnu clang zip apksigner
 
       - name: Build Magisk / KernelSU Module
         run: |
