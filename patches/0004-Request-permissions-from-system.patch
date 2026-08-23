@@ -1,0 +1,24 @@
+From 4d5b2233aeae2da963f7bda4cf218f51aea71874 Mon Sep 17 00:00:00 2001
+From: NSR-XINE <nasironfire07@gmail.com>
+Date: Sun, 23 Aug 2026 10:15:00 +0400
+Subject: [PATCH 4/4] Request permissions from Android system
+
+---
+ smali_classes2/q3/d.smali | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/smali_classes2/q3/d.smali b/smali_classes2/q3/d.smali
+index a609a4e1..f4b9f4b3 100644
+--- a/smali_classes2/q3/d.smali
++++ b/smali_classes2/q3/d.smali
+@@ -1418,6 +1418,12 @@
+     check-cast p1, [Ljava/lang/String;
+
+     const/16 v0, 0x65
+
++    invoke-virtual {p0, p1, v0}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
+
+     return v3
+ .end method
+-- 
+2.54.0
