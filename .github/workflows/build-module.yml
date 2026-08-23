@@ -1,0 +1,40 @@
+name: Build Magisk & KernelSU Module
+
+on:
+  push:
+    branches:
+      - lineage-23.2
+  pull_request:
+    branches:
+      - lineage-23.2
+  workflow_dispatch:
+
+jobs:
+  build-module:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-aarch64-linux-gnu clang zip
+
+      - name: Build Magisk / KernelSU Module
+        run: |
+          chmod +x build_module.sh
+          bash build_module.sh
+
+      - name: Upload Module Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MiuiCamera-uke-Magisk-KSU
+          path: MiuiCamera-uke-Magisk-KSU.zip
+          retention-days: 90

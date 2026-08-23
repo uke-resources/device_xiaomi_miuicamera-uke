@@ -2,3 +2,4 @@
 *.pyc
 __pycache__/
 vendor/proprietary/system/priv-app/MiuiCamera/MiuiCamera.apk
+*.zip
