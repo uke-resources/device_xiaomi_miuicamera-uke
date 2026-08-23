@@ -161,4 +161,5 @@ android_app_import {
         enabled: false,
     },
     privileged: true,
+    use_embedded_native_libs: true,
 }
