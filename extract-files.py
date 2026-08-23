@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+import os
+import subprocess
+
 from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
@@ -52,6 +55,22 @@ module = ExtractUtilsModule(
     namespace_imports=namespace_imports,
 )
 
+
+def split_camera_apk():
+    script_dir = os.path.dirname(os.path.realpath(__file__))
+    apk_dir = os.path.join(script_dir, 'vendor/proprietary/system/priv-app/MiuiCamera')
+    apk_path = os.path.join(apk_dir, 'MiuiCamera.apk')
+    if os.path.isfile(apk_path):
+        print('Splitting extracted MiuiCamera.apk into 90M parts...')
+        for f in os.listdir(apk_dir):
+            if f.startswith('MiuiCamera.apk.'):
+                os.remove(os.path.join(apk_dir, f))
+        subprocess.run(['split', '-b', '90M', '-d', '-a', '2', apk_path, f'{apk_path}.'], check=True)
+        os.remove(apk_path)
+        print('Successfully split MiuiCamera.apk into 90M chunks!')
+
+
 if __name__ == '__main__':
     utils = ExtractUtils.device(module)
     utils.run()
+    split_camera_apk()
